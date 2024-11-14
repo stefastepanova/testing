@@ -28,3 +28,4 @@ c = 3
 
 roots = quadratic_roots(a, b, c)
 print("Корни квадратного уравнения:", roots)
+
