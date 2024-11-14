@@ -16,7 +16,7 @@ def quadratic_roots(a, b, c):
         return (root1, root2)
     elif D == 0:
         root = -b / (2 * a)
-        return (root,)
+        return (root)
     else:
         root1 = (-b + cmath.sqrt(D)) / (2 * a)
         root2 = (-b - cmath.sqrt(D)) / (2 * a)
