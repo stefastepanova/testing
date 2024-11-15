@@ -35,3 +35,9 @@ jobs:
           -Dsonar.organization=stefastepanova
           -Dsonar.sources=.
           -Dsonar.python.coverage.reportPaths=coverage.xml 
+
+    - name: Upload coverage to Coveralls
+      run: |
+        coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
