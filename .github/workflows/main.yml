@@ -33,4 +33,6 @@ jobs:
         args: >
           -Dsonar.projectKey=stefastepanova_testing
           -Dsonar.organization=stefastepanova
+          -Dsonar.sources=.
+          -Dsonar.python.coverage.reportPaths=coverage.xml 
           
