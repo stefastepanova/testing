@@ -21,9 +21,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
 
+    - name: Run tests with coverage
+      run: |
+        coverage run -m pytest tests.py
+    
     - name: Run tests
       run: |
         pytest tests.py
+    - name: Submit coverage to Coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }} 
+      run: |
+        coveralls
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
@@ -36,8 +45,4 @@ jobs:
           -Dsonar.sources=.
           -Dsonar.python.coverage.reportPaths=coverage.xml 
 
-    - name: Upload coverage to Coveralls
-      run: |
-        coveralls
-      env:
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+    
