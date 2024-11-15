@@ -35,4 +35,3 @@ jobs:
           -Dsonar.organization=stefastepanova
           -Dsonar.sources=.
           -Dsonar.python.coverage.reportPaths=coverage.xml 
-          
